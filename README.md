@@ -1,6 +1,5 @@
-# easy
-
-A new Flutter project.
+# easy-app
+very horrible and bad coded app :3
 
 ## Getting Started
 
