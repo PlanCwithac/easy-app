@@ -3,16 +3,32 @@ import 'package:flutter/material.dart';
 
 class Sign_In extends StatefulWidget {
   static String email='admin@bau.com',password='admin';
+  static bool isSigned=false;
+  static String test='';
+  static void checkSignIn2(){
+    if (isSigned)
+      test='correct';
+    else
+      test='false';
+  }
   const Sign_In({Key? key}) : super(key: key);
 
 
   @override
   _Sign_InState createState() => _Sign_InState();
+
+
 }
 
 class _Sign_InState extends State<Sign_In> {
   TextEditingController _emailController=new TextEditingController();
   TextEditingController _passwordController=new TextEditingController();
+  bool checkSignIn(){
+    if(_emailController.text==Sign_In.email&&_passwordController.text==Sign_In.password)
+      return true;
+    else
+      return false;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,8 +103,10 @@ class _Sign_InState extends State<Sign_In> {
                 ),
                 color: Colors.yellow[800],
                 onPressed: ()  {
-                  if(_emailController.text==Sign_In.email&&_passwordController.text==Sign_In.password)
-                    Navigator.of(context).pushReplacementNamed('/home');
+                  if(checkSignIn()){
+                    Sign_In.isSigned=true;
+                    Sign_In.checkSignIn2();
+                    Navigator.of(context).pushReplacementNamed('/home');}
                 },
               ),
             ),

@@ -1,13 +1,21 @@
+import 'package:easy/pages/turkey.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
+  static void changeName(){
+    Turkey.countryName='Türkiye';
+  }
   const Home({Key? key}) : super(key: key);
-
   @override
   _HomeState createState() => _HomeState();
 }
 
 class _HomeState extends State<Home> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    Home.changeName();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

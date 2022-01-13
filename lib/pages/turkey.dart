@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
 class Turkey extends StatelessWidget {
+  static String countryName='';
   const Turkey({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Türkiye"),centerTitle: true,),
+      appBar: AppBar(title: Text(countryName),centerTitle: true,),
       body: SingleChildScrollView(
         child: Center(
           child: Column(
